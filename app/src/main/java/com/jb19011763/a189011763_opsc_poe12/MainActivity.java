@@ -106,7 +106,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity.this, "Logged in"
-                                    + mAuth.getCurrentUser().getEmail() + "successfully", Toast.LENGTH_SHORT).show();
+                                    + mAuth.getCurrentUser().getEmail() + " successfully", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(v.getContext(), Personal.class);
+                            v.getContext().startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }

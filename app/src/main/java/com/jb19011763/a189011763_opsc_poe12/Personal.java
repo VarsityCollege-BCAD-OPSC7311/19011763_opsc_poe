@@ -5,21 +5,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Personal extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef1 = database.getReference("orders");
+    DatabaseReference myRef1 = database.getReference("personal");
 
     Button btnSubmit;
     EditText etHeight, etWeight, etCalorieIntake, etWeightGoal;
     PersonalInfo o;
     String enteredHeight, enteredWeight, enteredCalories;
+    Button barGraph;
+    Button btnUpdate;
 
 
     @Override
@@ -32,11 +41,9 @@ public class Personal extends AppCompatActivity {
         etWeight = findViewById(R.id.Weight);
         etCalorieIntake = findViewById(R.id.CalorieIntake);
         etWeightGoal = findViewById(R.id.WeightGoal);
-
+        btnUpdate = findViewById(R.id.btnUpdate);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
 
@@ -44,17 +51,47 @@ public class Personal extends AppCompatActivity {
                 String WeightPush = etWeight.getText().toString().trim();
                 String CaloriesPush = etCalorieIntake.getText().toString().trim();
 
-                o = new PersonalInfo(HeightPush,WeightPush);
-                myRef1.push().setValue(o, CaloriesPush);
+                /**
+                 o = new PersonalInfo(HeightPush,WeightPush);
+                 myRef1.push().setValue(o, CaloriesPush);
 
 
-                Intent sendIntent = new Intent(Intent.ACTION_SEND);
-                sendIntent.setType("text/plain");
-                startActivity(Intent.createChooser(sendIntent, "Info saved.."));
+                 Intent sendIntent = new Intent(Intent.ACTION_SEND);
+                 sendIntent.setType("text/plain");
+                 startActivity(Intent.createChooser(sendIntent, "Info saved.."));
+                 */
 
+                HashMap<String, Object> personalInfo = new HashMap<String, Object>();
+                String key = myRef1.child("personal").push().getKey();
+                PersonalInfo pI = new PersonalInfo(etHeight.getText().toString().trim(), etWeight.getText().toString().trim(), etCalorieIntake.getText().toString().trim(), etWeightGoal.getText().toString().trim());
+                Map<String, Object> childUpdates = new HashMap<>();
+                childUpdates.put("/personal/" + key, pI.toMap());
+                myRef1.updateChildren(childUpdates).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Write was successful!
+                        // ...
+                        Toast.makeText(Personal.this,"Successfully committed data to Firebase", Toast.LENGTH_SHORT).show();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Write failed
+                        // ...
+                    }
+                });;
             }
 
-            
+
+        });
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
         });
 
 

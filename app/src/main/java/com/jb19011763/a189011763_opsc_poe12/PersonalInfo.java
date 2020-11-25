@@ -1,14 +1,29 @@
 package com.jb19011763.a189011763_opsc_poe12;
 
-public class PersonalInfo {
-    private String Height;
-    private String Weight;
-    private String CalorieIntake;
-    private String WeightGoal;
+import java.util.HashMap;
+import java.util.Map;
 
-    public PersonalInfo(String height, String weight) {
-        Height = height;
-        Weight = weight;
+public class PersonalInfo {
+    public String Height;
+    public String Weight;
+    public String CalorieIntake;
+    public String WeightGoal;
+
+    public PersonalInfo(String height, String weight, String calorieIntake, String weightGoal) {
+        this.Height = height;
+        this.Weight = weight;
+        this.CalorieIntake = calorieIntake;
+        this.WeightGoal = weightGoal;
+    }
+
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("height", this.Height);
+        result.put("weight", this.Weight);
+        result.put("calorieIntake", this.CalorieIntake);
+        result.put("weightGoal", this.WeightGoal);
+
+        return result;
     }
 
     public String getHeight() {
@@ -43,4 +58,5 @@ public class PersonalInfo {
     public void setWeightGoal(String weightGoal) {
         WeightGoal = weightGoal;
     }
+
 }
