@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.PasswordField);
         login = findViewById(R.id.LoginButton);
         register = findViewById(R.id.RegisterButton);
-<<<<<<< HEAD
         currentuser = mAuth.getInstance().getCurrentUser();
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -57,19 +56,6 @@ public class MainActivity extends AppCompatActivity {
            // }
 
        // });
-=======
-        currentuser = mAuth.getCurrentUser();
-
-
-
-        findViewById(R.id.btn_BarGraph).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), BarGraph.class));
-            }
-
-        });
->>>>>>> 92885e8e773f3b7d7d4356b4022a424ec3fdf3f9
 
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -123,10 +109,6 @@ public class MainActivity extends AppCompatActivity {
                                     + mAuth.getCurrentUser().getEmail() + "successfully", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
-
-=======
->>>>>>> 92885e8e773f3b7d7d4356b4022a424ec3fdf3f9
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -146,11 +128,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-<<<<<<< HEAD
-        //FirebaseUser currentuser = mAuth.getCurrentUser();
-=======
         FirebaseUser currentuser = mAuth.getCurrentUser();
->>>>>>> 92885e8e773f3b7d7d4356b4022a424ec3fdf3f9
 
         if (currentuser != null) {
             Toast.makeText(this, "You are already logged in" + mAuth.getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();

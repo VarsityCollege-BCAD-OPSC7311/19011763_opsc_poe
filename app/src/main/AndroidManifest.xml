@@ -3,11 +3,8 @@
     package="com.jb19011763.a189011763_opsc_poe12">
 
     <uses-permission android:name="android.permission.CAMERA" />
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-=======
->>>>>>> 92885e8e773f3b7d7d4356b4022a424ec3fdf3f9
 
     <application
         android:allowBackup="true"
@@ -19,11 +16,7 @@
         <activity android:name=".BarGraph"></activity>
         <activity android:name=".Conversion" />
         <activity android:name=".CamCapture" />
-<<<<<<< HEAD
         <activity android:name=".Personal" />
-=======
-        <activity android:name=".SettingsAndFeatures" />
->>>>>>> 92885e8e773f3b7d7d4356b4022a424ec3fdf3f9
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
