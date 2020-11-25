@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PSCV2_POE</string>
+    <string name="Login">Login Registration</string>
+    <string name="LoginInfo">Login:</string>
+    <string name="Password">Password:</string>
+    <string name="LoginButton">Login</string>
+    <string name="RegisterButton">Register</string>
+    <string name="PersonalTitle">Personal Information</string>
+    <string name="HeightWeightQuery">Please enter your Height and Weight:</string>
+    <string name="WeightCalorieQuery">Please enter your target for Weight and Calorie intake:</string>
+    <string name="DailyChangeText">Please enter your Daily Weight Changes:</string>
+    <string name="CamCap">Camera Food Capture</string>
+</resources>

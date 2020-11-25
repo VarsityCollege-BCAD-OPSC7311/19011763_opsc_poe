@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_Login"
+        android:icon="@drawable/ic_baseline_login_24"
+        android:title="Login/Register" />
+    <item
+        android:id="@+id/nav_camera"
+        android:icon="@drawable/ic_baseline_camera_alt_24"
+        android:title="Camera" />
+    <item
+        android:id="@+id/nav_Personal"
+        android:icon="@drawable/ic_baseline_accessibility_24"
+        android:title="Personal " />
+    <item
+        android:id="@+id/nav_barPage"
+        android:icon="@drawable/ic_baseline_bar_chart_24"
+        android:title="Bar Graph" />
+
+
+</menu>

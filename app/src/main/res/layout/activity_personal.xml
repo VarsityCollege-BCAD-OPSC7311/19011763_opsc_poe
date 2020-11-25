@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Personal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/PersonalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/PersonalTitle"
+        android:textSize="39dp" />
+
+
+    <TextView
+        android:id="@+id/HeightWeightQuery"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/HeightWeightQuery"
+        android:textSize="18dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/Height"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Height.."
+            android:inputType="number|textPersonName" />
+
+        <EditText
+            android:id="@+id/Weight"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Weight.."
+            android:inputType="number|textPersonName" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/WeightCalorieQuery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
+        android:layout_margin="20dp"
+        android:text="@string/WeightCalorieQuery"
+        android:textSize="18dp" />
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+
+       <EditText
+           android:id="@+id/WeightGoal"
+           android:layout_width="190dp"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="1dp"
+           android:ems="10"
+           android:hint="Weight Goal.."
+           android:inputType="numberDecimal" />
+
+       <EditText
+           android:id="@+id/CalorieIntake"
+           android:layout_width="190dp"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="1dp"
+           android:ems="10"
+           android:hint="Calorie Goal.."
+           android:inputType="numberDecimal" />
+
+
+</LinearLayout>
+
+    <Button
+        android:id="@+id/BtnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Submit"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/DailyChangeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
+        android:layout_margin="20dp"
+        android:text="@string/DailyChangeText"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Daily Changes (calories).."
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="103dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:text="Update"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/btn_BarGraph"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_marginTop="70dp"
+        android:text="View Data on Bar Graph"
+        android:textSize="10dp" />
+
+
+</LinearLayout>
